@@ -4,6 +4,8 @@ date: 2025-02-26
 
 # Cherry Studio使用指南
 
+> Cherry Studio的官方中文指南在这里：[https://docs.cherry-ai.com/](https://docs.cherry-ai.com/)。本文章旨在提供一些API选型、API接入等方面的个人建议，其它细节或教程请移步官方文档。
+
 ## 1 为什么是Cherry Studio
 
 [Cherry Studio](https://cherry-ai.com/)，官网介绍是一个“支持多服务商集成的AI对话客户端”。简单来说，就是能够在这个客户端内借助多种LLM API服务平台实现AI对话。
