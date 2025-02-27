@@ -21,7 +21,7 @@ date: 2025-02-26
 === "Cherry Studio"
     [**产品官网**](https://cherry-ai.com/) | [**Github官网**](https://github.com/CherryHQ/cherry-studio)
 
-    <img src="https://private-user-images.githubusercontent.com/8253512/372130079-28585d83-4bf0-4714-b561-8c7bf57cc600.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDA1NjM0ODAsIm5iZiI6MTc0MDU2MzE4MCwicGF0aCI6Ii84MjUzNTEyLzM3MjEzMDA3OS0yODU4NWQ4My00YmYwLTQ3MTQtYjU2MS04YzdiZjU3Y2M2MDAuanBnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI1MDIyNiUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTAyMjZUMDk0NjIwWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NDk0MjQ3OThmNDcxYzkxODZiMDFmYzA2NzVlZmVjNjM4NDQzMWE3NGQzY2RjY2E1MjY0ZjJlMjdkMDFmZWEzZiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.zJojp8kzZe57aghbQxXiLEQp1aDtrEAFX0n4z4sW6SA">
+    <img src="https://cherry-ai.com/assets/cherrys-BSOwcpuF.webp">
 
 === "Chatbox AI"
     [**产品官网**](https://chatboxai.app/zh) | [**Github官网**](https://github.com/Bin-Huang/chatbox)
@@ -31,7 +31,7 @@ date: 2025-02-26
 === "AnythingLLM"
     [**产品官网**](https://anythingllm.com/) | [**Github官网**](https://github.com/Mintplex-Labs/anything-llm)
 
-    <img src="https://private-user-images.githubusercontent.com/16845892/294273127-cfc5f47c-bd91-4067-986c-f3f49621a859.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDA1NjM4NDksIm5iZiI6MTc0MDU2MzU0OSwicGF0aCI6Ii8xNjg0NTg5Mi8yOTQyNzMxMjctY2ZjNWY0N2MtYmQ5MS00MDY3LTk4NmMtZjNmNDk2MjFhODU5LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAyMjYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMjI2VDA5NTIyOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZjMjEyNWE5OGM3NjdiMjNhYTc5NDgwZTdjNzQzZWY3ZjM2OTAwMWY5OWNlMWYxNWQ4NWU1MWE4ZjhlOWQwY2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.vZi_uAvEyTl5_MqHRvzsqPPwv7AQiiwL0CVnCRDpnDI">
+    <img src="https://github.com/Mintplex-Labs/anything-llm/assets/16845892/cfc5f47c-bd91-4067-986c-f3f49621a859">
 
 当然，选择哪款产品都没有问题，因为每个人的审美、功能需求都不同。我个人根据UI风格、易用性和功能性选择了Cherry Studio，它内部集成了很多常用的LLM API服务平台（包括国内的），减少了很多API的导入工作，同时能快速切换不同模型、具备知识库检索功能（虽然现在它的RAG召回准确率有待优化）。另外，Cherry Studio目前也在持续更新，尤其是近期v1.0.0版本新增了联网搜索，所以个人也看好Cherry Studio的发展前景。
 
@@ -128,7 +128,7 @@ Cherry Studio的[官网](https://cherry-ai.com/)或[Github Release](https://gith
 
 Cherry Studio在v1.0.0版本更新了联网搜索功能，这能够让我们的体验更加接近DeepSeek官网（~~可能吧~~）。这一过程同样是注册、复制API key、粘贴API key，不再赘述了。
 
-不过Cherry Studio集成的这个搜索工具是有限额的，每个月1000次请求。所以对实时性要求不高的任务可以关闭联网搜索避免超额。
+不过Cherry Studio集成的这个搜索工具是有限额的，每个月1000次请求。所以对时效性要求不高的任务可以关闭联网搜索避免超额。
 
 ![alt text](img/cherry-studio的联网搜索.png)
 
