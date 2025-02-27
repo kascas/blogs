@@ -94,13 +94,25 @@ Cherry Studio的[官网](https://cherry-ai.com/)或[Github Release](https://gith
 !!! note
     点击“检查”按钮后，会弹窗让选择模型。如果没有事先想要测试的模型的话，选择任意模型即可，然后点击确定。若弹窗显示“连接成功”则配置无误。
 
+!!! info
+    如果你想用其它平台的API但是Cherry Studio没有提供的话，可以点击下方“添加”来集成。
+    ![alt text](img/cherry-studio添加平台.png)
+    这里提供商名称自己写就好，提供商类型一般都是兼容OpenAI的，所以大多数情况默认OpenAI就好，特殊情况可能要多查一查了。
+    点击“确定”之后，需要填写API密钥和API地址。
+    ![alt text](img/cherry-studio平台设置.png)
+    API密钥像前面那样获取和粘贴即可。API地址需要去各个平台的指南/官方说明中获取。以ModelScope为例，API的`base_url`在这里：
+    ![alt text](img/cherry-studio获取URL.png)
+
+    !!! note
+        兼容OpenAI的API使用说明可以参考[ModelScope API推理介绍](https://modelscope.cn/docs/model-service/API-Inference/intro)进行简单了解。
+
 ### 4.2 模型选择与导入
 
 模型选择直接决定了用户的体验。下面我根据个人经验给出一些推荐：
 
 - **复杂任务**，尤其涉及多步推理和验证的任务，优选`deepseek-ai/DeepSeek-R1`。R1目前仍然是最强大的开源推理大模型。此外，不要选择DeepSeek的蒸馏版本（DeepSeek-R1-Distill-xxx）。
 - **简单任务**，例如自由问答、中英翻译，可以考虑`Qwen/Qwen2.5-72B-Instruct`、`LLM-Research/Meta-Llama-3.1-405B-Instruct`、`deepseek-ai/DeepSeek-V3`等。非推理类大模型处理简单任务一般问题不大，并且不会有冗杂的思考过程。
-  - 代码类问题可以使用Coder模型，例如`Qwen/Qwen2.5-Coder-32B-Instruct`。不过，VSCode+Github Copilot或许是一个更好的选择。
+    - 代码类问题可以使用Coder模型，例如`Qwen/Qwen2.5-Coder-32B-Instruct`。不过，VSCode+Github Copilot或许是一个更好的选择。
 - **长文本相关任务**，目前支持上下文最长的可能是`Qwen/Qwen2.5-14B-Instruct-1M`，支持1M上下文。现在模型一般支持上下文大概在128k左右，如果有处理特别长文本的需求，可以考虑用这个模型。
 
 考虑好需要哪些模型之后，下面进行模型的导入。在Cherry Studio的对应平台配置界面的下方，有“管理”和“添加”两个按钮。优先点击“管理”按钮检查模型是否在列表中，如果有则直接导入即可，如果没有则点击“添加”按钮手动导入。
