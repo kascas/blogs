@@ -160,6 +160,10 @@ Cherry Studio在v1.0.0版本更新了联网搜索功能，这能够让我们的�
 
 ![alt text](img/cherry-studio的模型切换.png)
 
+当然也可以同时让多个模型做出回答。
+
+![alt text](img/cherry-studio多模型回答.png)
+
 ### 5.2 联网搜索
 
 点击“开启联网搜索”按钮进行切换。
