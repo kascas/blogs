@@ -1,0 +1,1732 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../NLP/1%20Transformer/">
+      
+      
+        <link rel="next" href="../../RL/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+      
+        <title>基础知识 - Kascas Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Kascas Blog" class="md-header__button md-logo" aria-label="Kascas Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Kascas Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              基础知识
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../NLP/1%20Transformer/" class="md-tabs__link">
+          
+  
+  大模型
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  深度学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../RL/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-tabs__link">
+          
+  
+  强化学习
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Tools/AI%20Tools/Cherry%20Studio/" class="md-tabs__link">
+          
+  
+  实用工具
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Kascas Blog" class="md-nav__button md-logo" aria-label="Kascas Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Kascas Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    大模型
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            大模型
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NLP/1%20Transformer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transformer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    深度学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            深度学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    基础知识
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    基础知识
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 反向传播
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 反向传播">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.1 梯度计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.2 梯度下降法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.3 梯度下降的若干变形
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 优化算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 优化算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 学习率调整
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2 梯度估计修正
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 参数初始化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 正则化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 归一化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 归一化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-batchnorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.1 BatchNorm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-layernorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.2 LayerNorm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-instancenorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.3 InstanceNorm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#154-weightnorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.4 WeightNorm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 凸优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 凸优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.1 全局最小解与局部最小解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.2 梯度下降法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-kkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.3 拉格朗日乘数法与KKT条件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 激活函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 损失函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logisticsoftmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      * Logistic/Softmax回归
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    强化学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            强化学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RL/1%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    基础知识
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RL/2%20%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    经典算法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RL/3%20%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    常用技巧
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RL/4%20%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93RL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    多智能体强化学习
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    实用工具
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            实用工具
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tools/AI%20Tools/Cherry%20Studio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cherry Studio使用指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Tools/AI Tools/Zotero+LLM.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zotero+LLM使用指南
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 反向传播
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 反向传播">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.1 梯度计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.2 梯度下降法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1.3 梯度下降的若干变形
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 优化算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 优化算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 学习率调整
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2 梯度估计修正
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 参数初始化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 正则化
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 归一化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 归一化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-batchnorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.1 BatchNorm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-layernorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.2 LayerNorm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#153-instancenorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.3 InstanceNorm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#154-weightnorm" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.4 WeightNorm
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 凸优化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 凸优化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.1 全局最小解与局部最小解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.2 梯度下降法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-kkt" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.3 拉格朗日乘数法与KKT条件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 激活函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8 损失函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logisticsoftmax" class="md-nav__link">
+    <span class="md-ellipsis">
+      * Logistic/Softmax回归
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1">1 基础知识</h1>
+<h2 id="11">1.1 反向传播</h2>
+<h3 id="111">1.1.1 梯度计算</h3>
+<p>第<span class="arithmatex">\(l\)</span>层隐藏层计算过程如下：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\boldsymbol{z}^{(l)}&amp;=\boldsymbol{W}^{(l)}\boldsymbol{a}^{(l-1)}+\boldsymbol{b}^{(l)}\\
+a^{(l)}&amp;=f_l(\boldsymbol{z}^{(l)})\\
+\delta^{(l)}&amp;=\frac{\partial L(\boldsymbol{y},\boldsymbol{\hat{y}})}{\partial \boldsymbol{z}^{(l)}}\\
+\end{aligned}
+\]</div>
+<p>则求偏导有以下结果：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial\boldsymbol{z}^{(l)}}{\partial w^{(l)}_{ij}}
+&amp;=\left[\frac{\partial\boldsymbol{z}^{(l)}_1}{\partial w^{(l)}_{ij}},\cdots,\frac{\partial\boldsymbol{z}^{(l)}_i}{\partial w^{(l)}_{ij}},\cdots,\frac{\partial\boldsymbol{z}^{(l)}_{M_i}}{\partial w^{(l)}_{ij}}\right]\\
+&amp;=\left[0,\cdots,\frac{\partial(\boldsymbol{W}^{(l)}_{i:}\boldsymbol{a}^{(l-1)}+b^{(l)}_i)}{\partial w^{(l)}_{ij}},\cdots,0\right]\\
+&amp;=\left[0,\cdots,a^{(l-1)}_j,\cdots,0\right]\\
+&amp;=\mathbb{I}_i(a^{(l-1)}_j)\in \mathbb{R}^{1\times M_l}\\ \\ \\
+\frac{\partial\boldsymbol{z}^{(l)}}{\partial b^{(l)}}
+&amp;=\boldsymbol{I}_{M_l}\\ \\ \\
+\delta^{(l)}&amp;=\frac{\partial L(\boldsymbol{y},\boldsymbol{\hat{y}})}{\partial \boldsymbol{z}^{(l)}}\\
+&amp;=\frac{\partial \boldsymbol{a}^{(l)}}{\partial\boldsymbol{z}^{(l)}}\cdot\frac{\partial\boldsymbol{z}^{(l+1)}}{\partial\boldsymbol{a}^{(l)}}\cdot\frac{\partial L(\boldsymbol{y},\boldsymbol{\hat{y}})}{\partial \boldsymbol{z}^{(l+1)}}\\
+&amp;=\text{diag}\left(f_l'(z^{(l)})\right)\cdot (\boldsymbol{W}^{(l+1)})^\top\cdot \delta^{(l+1)}\\
+&amp;=f_l'(z^{(l)})\odot (\boldsymbol{W}^{(l+1)})^\top\cdot \delta^{(l+1)}\in \mathbb{R}^{M_l}\\
+\end{aligned}
+\]</div>
+<p>因此，可知参数的反向传播梯度如下：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial L(\boldsymbol{y},\boldsymbol{\hat{y}})}{\partial \boldsymbol{W}^{(l)}}&amp;=\delta^{(l)}(\boldsymbol{a}^{(l-1)}_j)^\top\in R^{M_l\times M_{l-1}}\\
+\frac{\partial L(\boldsymbol{y},\boldsymbol{\hat{y}})}{\partial \boldsymbol{b}^{(l)}_{ij}}&amp;=\delta^{(l)}\in \mathbb{R}^{M_l}\\
+\end{aligned}
+\]</div>
+<h3 id="112">1.1.2 梯度下降法</h3>
+<p>按下面的迭代公式来计算训练集<span class="arithmatex">\(D\)</span>上风险函数的最小值：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\theta_{t+1}
+&amp;=\theta_{t}-\alpha\frac{\partial R_D(\theta)}{\partial \theta}\\
+&amp;=\theta_{t}-\alpha\frac{1}{N}\sum_{n=1}^N\frac{\partial L(y^{(n)},f(x^{(n)};\theta))}{\partial \theta}\\
+\end{aligned}
+\]</div>
+<h3 id="113">1.1.3 梯度下降的若干变形</h3>
+<p><strong>批量梯度下降（BGD）</strong>：每次迭代时需要计算每个样本上损失函数的梯度并求和。当训练集中的样本数
+量<span class="arithmatex">\(N\)</span>很大时，空间复杂度比较高，每次迭代的计算开销也很大。</p>
+<p><strong>随机梯度下降（SGD）</strong>：每次迭代时只采集一个样本，计算这个样本损失函数的梯度并更新参数。当经过足够次数的迭代时，随机梯度下降也可以收敛到局部最优解。</p>
+<ul>
+<li>随机梯度下降相当于在批量梯度下降的梯度上引入了随机噪声</li>
+<li>在非凸优化问题中，随机梯度下降更容易逃离局部最优点</li>
+</ul>
+<p><strong>小批量梯度下降法（Mini-Batch GD）</strong>：批量梯度下降和随机梯度下降的折中。每次迭代时，我们随机选取一小部分训练样本来计算梯度并更新参数，这样既可以兼顾随机梯度下降法的优点，也可以提高训练效率。</p>
+<h2 id="12">1.2 优化算法</h2>
+<h3 id="121">1.2.1 学习率调整</h3>
+<p><strong>学习率衰减</strong>：也称学习率退火。学习率在一开始要保持大些来保证收敛速度，在收敛到最优点附近时要小些以避免来回振荡。常见衰减方法如下：</p>
+<ul>
+<li>分段常数衰减</li>
+<li>逆时衰减：<span class="arithmatex">\(\alpha_t=\alpha_0\cdot\frac{1}{1+\beta\cdot t}\)</span></li>
+<li>指数衰减/自然指数衰减：<span class="arithmatex">\(\alpha_t=\alpha_0\cdot\beta^t\)</span></li>
+<li>余弦衰减：<span class="arithmatex">\(\alpha_t=\frac{1}{2}\alpha_0\cdot\left(1+\cos\frac{t\pi}{T}\right)\)</span></li>
+</ul>
+<p><strong>学习率预热</strong>：在刚开始训练时，由于参数是随机初始化的，梯度往往也比较大，再加上比较大的初始学习率，会使得训练不稳定。可以在最初几轮迭代时，采用比较小的学习率，等梯度下降到一定程度后再恢复到初始的学习率。</p>
+<p><strong>周期性学习率调整</strong>：为了使得梯度下降法能够逃离鞍点或尖锐最小值，一种经验性的方式是在训练过程中周期性地增大学习率。周期性地增大学习率虽然可能短期内损害优化过程，使得网络收敛的稳定性变差，但从长期来看有助于找到更好的局部最优解。</p>
+<ul>
+<li>循环学习率，常见三角循环学习率</li>
+<li>带热重启的随机梯度下降，常见带热重启的余弦衰减</li>
+</ul>
+<p><strong>AdaGrad</strong>：借鉴L2正则化的思想，每次迭代时自适应地调整每个参数的学习率。</p>
+<ul>
+<li>如果某个参数的偏导数累积比较大，其学习率相对较小；相反，如果其偏导数累积较小，其学习率相对较大。但整体是随着迭代次数的增加，学习率逐渐缩小</li>
+<li>缺点是在经过一定次数的迭代依然没有找到最优点时，由于这时的学习率已经非常小，很难再继续找到最优点</li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+G_t&amp;=\sum_{\tau=1}^{t}\boldsymbol{g}_\tau\odot\boldsymbol{g}_\tau\\
+\Delta\theta_t&amp;=-\frac{\alpha}{\sqrt{G_t+\varepsilon}}\odot \boldsymbol{g}_t
+\end{aligned}
+\]</div>
+<p><strong>RMSprop</strong>：可以在有些情况下避免 AdaGrad 算法中学习率不断单调下降以至于过早衰减的缺点。RMSProp算法和AdaGrad算法的区别在于<span class="arithmatex">\(G_t\)</span>的计算由累积方式变成了指数衰减移动平均。在迭代过程中，每个参数的学习率并不是呈衰减趋势，既可以变小也可以变大。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+G_t&amp;=\beta G_{t-1}+(1-\beta)\boldsymbol{g}_t\odot \boldsymbol{g}_t\\
+&amp;=(1-\beta)\sum_{\tau=1}^t\beta^{t-\tau}\boldsymbol{g}_\tau\odot\boldsymbol{g}_\tau\\
+\Delta\theta_t&amp;=-\frac{\alpha}{\sqrt{G_t+\varepsilon}}\odot \boldsymbol{g}_t
+\end{aligned}
+\]</div>
+<p><strong>AdaDelta</strong>：和RMSprop算法类似，AdaDelta算法通过梯度平方的指数衰减移动平均来调整学习率。此外，AdaDelta算法还引入了每次参数更新差值<span class="arithmatex">\(\Delta\theta\)</span>的平方的指数衰减权移动平均。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\Delta X_{t-1}^2 &amp;= \beta_1\Delta X_{t-2}^2+(1-\beta_1)\Delta\theta_{t-1}\odot\Delta \theta_{t-1}\\
+\Delta \theta_t&amp;=-\frac{\sqrt{\Delta X_{t-1}^2+\varepsilon}}{\sqrt{G_t+\varepsilon}}\boldsymbol{g}_t
+\end{aligned}
+\]</div>
+<h3 id="122">1.2.2 梯度估计修正</h3>
+<p>随机梯度下降方法中每次迭代的梯度估计和整个训练集上的最优梯度并不一致，具有一定的随机性。一种有效地缓解梯度估计随机性的方式是通过使用最近一段时间内的平均梯度来代替当前时刻的随机梯度来作为参数更新的方向，从而提高优化速度。</p>
+<p><strong>动量法</strong>：用之前积累动量来替代真正的梯度．每次迭代的梯度可以看作加速度。<span class="arithmatex">\(\rho\)</span>为动量因子，则：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\Delta\theta_t&amp;=\rho\Delta\theta_{t-1}-\alpha\boldsymbol{g}_t\\
+&amp;=-\alpha\sum_{\tau=1}^t \rho^{t-\tau}\boldsymbol{g}_\tau
+\end{aligned}
+\]</div>
+<p><strong>Nesterov动量法</strong>：在动量法中，参数更新可分为两步：(1) <span class="arithmatex">\(\hat{\theta}-\theta_{t-1}+\rho\Delta\theta_{t-1}\)</span>，(2) <span class="arithmatex">\(\theta_t=\hat{\theta}-\alpha\boldsymbol{g}_t\)</span> ，但是第二步不合理，更新方向应为<span class="arithmatex">\(\hat{\theta}\)</span>上的梯度。因此Nesterov动量法的改进如下：</p>
+<div class="arithmatex">\[
+\Delta\theta_t=\rho\Delta\theta_{t-1}-\alpha\boldsymbol{g}_t\textcolor{red}{(\theta_{t-1}+\rho\Delta\theta_{t-1})}
+\]</div>
+<p><strong>Adam</strong>：可以看作动量法与RMSprop的结合，不但使用动量作为参数更新方向，而且可以自适应调整学习率。Adam既计算梯度平方的指数加权平均<span class="arithmatex">\(G_t\)</span>（类似RMSprop），也计算梯度的指数加权平均<span class="arithmatex">\(M_t\)</span>（类似动量法）。可以把<span class="arithmatex">\(M_t\)</span>和<span class="arithmatex">\(G_t\)</span>分别看作梯度的均值（一阶矩）和未减去均值的方差（二阶矩）。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+M_t&amp;=\beta_1 M_{t-1}+(1-\beta_1)\boldsymbol{g}_t\\
+G_t&amp;=\beta_2 G_{t-1}+(1-\beta_2)\boldsymbol{g}_t\odot\boldsymbol{g}_t
+\end{aligned}
+\]</div>
+<p>假设<span class="arithmatex">\(M_0=0\)</span>，<span class="arithmatex">\(G_0=0\)</span>，那么在迭代初期<span class="arithmatex">\(M_t\)</span>和<span class="arithmatex">\(G_t\)</span>的值会比真实的均值和方差要小。特别是当<span class="arithmatex">\(\beta_1\)</span>和<span class="arithmatex">\(\beta_2\)</span>都接近于1时，偏差会很大。因此，需要对偏差进行修正。</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\hat{M}_t&amp;=\frac{M_t}{1-\beta_1^t}\\
+\hat{G}_t&amp;=\frac{G_t}{1-\beta_2^t}\\
+\end{aligned}
+\]</div>
+<p>Adam算法的参数更新差值为：</p>
+<div class="arithmatex">\[
+\Delta \theta_t=-\frac{\alpha}{\sqrt{\hat{G}_t+\varepsilon}}\hat{M}_t
+\]</div>
+<p><strong>梯度截断</strong>：在基于梯度下降的优化过程中，如果梯度突然增大，用大的梯度更新参数反而会导致其远离最优点。梯度截断是一种比较简单的启发式方法，把梯度的模限定在一个区间。一般截断的方式有以下几种：</p>
+<ul>
+<li>按值截断：<span class="arithmatex">\(\boldsymbol{g}_t=\max(\min(\boldsymbol{g}_t,b),a)\)</span>。</li>
+<li>按模截断：若<span class="arithmatex">\(\|\boldsymbol{g}_t\|&gt;b\)</span>，则<span class="arithmatex">\(\boldsymbol{g}_t=\frac{b}{\|\boldsymbol{g}_t\|}\boldsymbol{g}_t\)</span></li>
+</ul>
+<h2 id="13">1.3 参数初始化</h2>
+<p><strong>基于固定方差</strong>：关键在于如何设置方差<span class="arithmatex">\(\sigma^2\)</span>，太小会导致神经元输出过小，经过多层之后信号慢慢消失，并且还会使sigmoid激活函数失去非线性能力；太大会导致sigmoid激活函数的梯度消失。基于固定方差的初始化通常结合Layer Norm使用。</p>
+<ul>
+<li>高斯分布初始化：<span class="arithmatex">\(N(0,\sigma^2)\)</span></li>
+<li>均匀分布初始化：<span class="arithmatex">\([-r, r]\)</span>，其中<span class="arithmatex">\(r=\sqrt{3\sigma^2}\)</span></li>
+</ul>
+<p><strong>基于方差缩放</strong>：根据神经元的性质进行差异化设置。如果神经元输入很多，则每个连接上的权重应小些，避免输出过大或过饱和。对于深度网络，为了缓解梯度消失和梯度爆炸，需要尽可能保持神经元输入和输出方差的一致，根据神经元连接数量自适应调整初始化的方差，即方差缩放。</p>
+<ul>
+<li>
+<p>Xavier初始化：假设激活函数为恒等函数，则有<span class="arithmatex">\(\text{Var}(a^{(l)})=\text{Var}(\sum_{i=1}^{M_{l-1}}w_i^{(l)}a_i^{(l-1)})\\=\sum_{i=1}^{M_{l-1}}\text{Var}(w_i^{(l)})\text{Var}(a_i^{(l-1)})\\=M_{l-1}\text{Var}(w_i^{(l)})\text{Var}(a_i^{(l-1)})\\\)</span>。为了保证前向和后向的方差都不被过分放大或缩小，因此折中后设置参数的方差为<span class="arithmatex">\(\text{Var}(w_i^{(l)})=\frac{2}{M_l+M_{l-1}}\)</span>。对于tanh和sigmoid等激活函数，通常需要乘以缩放因子<span class="arithmatex">\(\rho\)</span></p>
+</li>
+<li>
+<p>He初始化/Kaiming初始化：当第<span class="arithmatex">\(l\)</span>层神经元使用ReLU激活函数时，通常有一半的神经元输出为0，因此其分布的方差也近似为使用恒等函数时的一半。只考虑前向传播时，参数的理想方差为<span class="arithmatex">\(\text{Var}(w_i^{(l)})=\frac{2}{M_{l-1}}\)</span>。</p>
+</li>
+</ul>
+<p><strong>正交初始化</strong>：为了避免梯度消失或梯度爆炸，希望误差项在反向传播中具有范数保持性，即<span class="arithmatex">\(\|\delta^{(l-1)}\|^2=\|(\boldsymbol{W}^{(l)})^\top\delta^{(l)}\|^2=\|\delta^{(l)}\|^2\)</span>。正交初始化可能保证这一性质，通常由两步实现：(1) 用<span class="arithmatex">\(N(0,1)\)</span>初始化矩阵，(2) 对矩阵进行奇异值分解得到两个正交矩阵，并使用其中一个作为参数矩阵。使用非线性激活函数时，可乘以缩放因子<span class="arithmatex">\(\rho\)</span></p>
+<h2 id="14">1.4 正则化</h2>
+<p>正则化是一类通过限制模型复杂度，从而避免过拟合，提高泛化能力的方法。</p>
+<p><strong>L1、L2正则化</strong>：带正则化的优化问题等价于带约束条件的优化问题<span class="arithmatex">\(\theta^*=\arg\min\frac{1}{N}\sum_{i=1}^N L(y^{(n)},\hat{y}^{(n)}) \ \text{s.t.} \ L_p(\theta)\leq C\)</span>，其中L1范数在零点不可导，通常近似为<span class="arithmatex">\(L_1(\theta)=\sum_{i=1}^D\sqrt{\theta_d^2+\varepsilon}\)</span></p>
+<ul>
+<li>L1正则化的约束通常使得最优解位于坐标轴上，能够增加参数的稀疏性，因此也能起到特征选择的作用</li>
+<li>L2正则化虽然不会导致参数的稀疏性，但也能缓解过拟合，因为参数总体较小，对数据偏移敏感度较弱，具有较强的抗扰动能力</li>
+<li>从先验分布的角度，L1正则化假设参数服从拉普拉斯分布，L2正则化假设参数服从高斯分布</li>
+</ul>
+<p><strong>权重衰减</strong>：<span class="arithmatex">\(\theta_t\leftarrow(1-\beta)\theta_{t-1}-\alpha\boldsymbol{g}_t\)</span>，L2正则化是实现权重衰减的一种形式，但在较复杂的优化方法中二者不等价。</p>
+<p><strong>提前停止</strong>：当验证集上的错误率不再下降就停止迭代。</p>
+<p><strong>Dropout</strong>：设定一个固定概率<span class="arithmatex">\(p\)</span>，对于一层神经元有<span class="arithmatex">\(\boldsymbol{y}=f(\boldsymbol{W}\cdot \text{mask}(\boldsymbol{x})+\boldsymbol{b})\)</span></p>
+<ul>
+<li>训练阶段：<span class="arithmatex">\(\text{mask}(\boldsymbol{x})=\boldsymbol{m}\odot\boldsymbol{x}\)</span>，其中<span class="arithmatex">\(\boldsymbol{m}\in\{0,1\}^D\)</span>以服从<span class="arithmatex">\(p\)</span>的伯努利分布随机生成</li>
+<li>测试阶段：<span class="arithmatex">\(\text{mask}(\boldsymbol{x})=p\cdot\boldsymbol{x}\)</span></li>
+<li>从集成学习的角度：Dropout相当于从原始网络中采样获得许多子网络，每次迭代相当于训练不同的子网络，并且这些子网络共享参数，因此可以近似看作集成指数级子网络的组合模型</li>
+<li>从贝叶斯学习的角度：Dropout相当于假设参数<span class="arithmatex">\(\theta\)</span>服从先验分布<span class="arithmatex">\(q(\theta)\)</span>，然后对参数进行多次采样进行训练</li>
+<li>RNN上的Dropout：随机丢弃会损害RNN在时间维度上的记忆能力，因此需要对所有时刻使用相同的丢弃掩码，即变分丢弃</li>
+</ul>
+<p><strong>数据增强</strong>：主要针对图像，包括旋转、翻转、缩放、平移、加噪等</p>
+<p><strong>标签平滑</strong>：简单的方法是使用软目标<span class="arithmatex">\([\frac{\varepsilon}{K-1}\cdots 1-\varepsilon\cdots \frac{\varepsilon}{K-1}]\)</span>代替硬目标<span class="arithmatex">\([0\cdots 1 \cdots 0]\)</span>。另一种方式包括知识蒸馏，即预先训练一个更复杂的教师网络，然后使用教师网络的输出作为软目标来训练学生网络。</p>
+<h2 id="15">1.5 归一化</h2>
+<p>逐层归一化是对神经网络中隐藏层的输入进行归一化，从而使得网络更容易训练。逐层归一化能提高训练效率的原因主要包括：</p>
+<ul>
+<li>更好的尺度不变性：由于存在内部协变量偏移（每次参数更新都会导致隐藏层输入分布发生变化，越高的层变化越明显），因此逐层归一化能使输入分布保持稳定</li>
+<li>更平滑的优化地形：逐层归一化能使大部分神经元的输入处于不饱和区域，缓解梯度消失问题。另外，也能够使神经网络的优化地形更加平滑，使得梯度更稳定，允许使用更大的学习率来加速收敛</li>
+</ul>
+<h3 id="151-batchnorm">1.5.1 BatchNorm</h3>
+<p><strong>计算原理</strong>：</p>
+<ul>
+<li>前向传播过程：</li>
+<li>计算均值与方差：对应计算<span class="arithmatex">\(\mu_B\)</span>和<span class="arithmatex">\(\sigma^2_B\)</span></li>
+<li>标准化：对应计算<span class="arithmatex">\(\hat{x}_i\)</span>，将输入的每一维特征转化为均值为0方差为1的正态分布</li>
+<li>缩放平移：对应计算<span class="arithmatex">\(y_i\)</span>，其中<span class="arithmatex">\(\gamma\)</span>和<span class="arithmatex">\(\beta\)</span>均为可学习的参数。缩放平移赋予了BN的还原能力，若<span class="arithmatex">\(\gamma=1\)</span>且<span class="arithmatex">\(\beta=0\)</span>则为完全还原。</li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+\mu_B&amp;\leftarrow\frac{1}{M}\sum_{i=1}^M x_i\\
+\sigma^2_B&amp;\leftarrow \frac{1}{M}\sum_{i=1}^M (x_i-\mu_B)^2\\
+\hat{x}_i&amp;\leftarrow \frac{x_i-\mu_B}{\sqrt{\sigma_B^2+\varepsilon}}\\
+y_i&amp;\leftarrow \gamma \hat{x}_i+\beta \equiv \text{BN}_{\gamma,\beta}(x_i)
+\end{aligned}
+\]</div>
+<ul>
+<li>反向传播过程：</li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\partial l}{\partial \hat{x}_i}&amp;=\frac{\partial l}{\partial y_i}\cdot \gamma\\
+\frac{\partial l}{\partial \sigma_B^2}&amp;=\sum_{i=1}^M \frac{\partial l}{\partial \hat{x}_i}\cdot (x_i-\mu_B)\cdot \frac{-1}{2}(\sigma_B^2+\varepsilon)^{-\frac{3}{2}}\\
+\frac{\partial l}{\partial \mu_B}&amp;=\sum_{i=1}^{M}\frac{\partial l}{\partial \hat{x}_i}\cdot \frac{-1}{\sqrt{\sigma^2_B+\varepsilon}}\\
+\frac{\partial l}{\partial x_i}&amp;=\frac{\partial l}{\partial \hat{x}_i}\cdot\frac{1}{\sqrt{\sigma^2_B+\varepsilon}}+\frac{\partial l}{\partial \sigma^2_B}\cdot\frac{2(x_i-\mu_B)}{m}+\frac{\partial l}{\partial \mu_B}\cdot\frac{1}{m}\\
+\frac{\partial l}{\partial \gamma}&amp;=\sum_{i=1}^M \frac{\partial l}{\partial y_i}\cdot \hat{x}_i\\
+\frac{\partial l}{\partial \beta}&amp;=\sum_{i=1}^M \frac{\partial l}{\partial y_i}
+\end{aligned}
+\]</div>
+<ul>
+<li>训练阶段：</li>
+<li>初始化：参数矩阵使用Xavier初始化，偏置项可忽略（因为BN层可实现缩放平移），<span class="arithmatex">\(\gamma=1\)</span>，<span class="arithmatex">\(\beta=0\)</span></li>
+<li>均值与方差的计算：指数移动平均法<span class="arithmatex">\(x_\text{EMA}=x_\text{EMA}\cdot \rho+(1-\rho)\cdot x_\text{B}\)</span></li>
+<li>在CNN中，假设mini-batch样本维度为<span class="arithmatex">\(N\times C \times H\times W\)</span>，则BN在<span class="arithmatex">\((N,H,W)\)</span>上进行操作</li>
+<li>测试阶段：<span class="arithmatex">\(y=\frac{x-\mu_B}{\sqrt{\sigma^2_B+\varepsilon}}\cdot \gamma+\beta\)</span></li>
+</ul>
+<p><strong>主要作用</strong>：</p>
+<ul>
+<li>使隐藏层输入分布更稳定，缓解内部协变量偏移</li>
+<li>使神经元的输入处于梯度不饱和区域，缓解梯度消失</li>
+<li>一定的正则化作用</li>
+<li>在训练时，神经网络对一个样本的预测不仅和该样本自身相关，也和同一批次中的其他样本相关</li>
+<li>由于在选取批次时具有随机性，相当于引入了随机噪声，因此使得神经网络不会“过拟合”到某个特定样本，从而提高网络的泛化能力</li>
+</ul>
+<p><strong>局限性/缺点</strong>：</p>
+<ul>
+<li>batch_size较小时，均值和方差的估计不准确，此时效果较差</li>
+<li>BN主要应用于MLP和CNN类网络，不适用于RNN</li>
+</ul>
+<h3 id="152-layernorm">1.5.2 LayerNorm</h3>
+<p><strong>计算原理</strong>：</p>
+<ul>
+<li>前向传播过程：</li>
+<li>计算隐藏层输入的均值和方差</li>
+<li>缩放平移</li>
+<li>RNN中的LN：<span class="arithmatex">\(\boldsymbol{h}_t=f(\text{LN}_{\gamma,\beta}(\boldsymbol{U}\boldsymbol{h}_{t-1}+\boldsymbol{W}\boldsymbol{x}_t))\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+\mu^{(l)}&amp;=\frac{1}{M_l}\sum_{i=1}^{M_l} z_i^{(l)}\\
+\sigma^{{(l)}^2}&amp;=\frac{1}{M_l}\sum_{i=1}^{M_l} (z_i^{(l)}-\mu^{(l)})^2\\
+\hat{z}^{(l)}&amp;=\frac{z^{(l)}-\mu^{(l)}}{\sqrt{\sigma^{{(l)}^2}+\varepsilon}}\odot \gamma + \beta \equiv \text{LN}_{\gamma,\beta}(z^{(l)})
+\end{aligned}
+\]</div>
+<p><strong>局限性/缺点</strong>：</p>
+<ul>
+<li>不依赖于batch_size和序列长度，因此可以适用于RNN</li>
+<li>在CNN上的效果不如BN</li>
+</ul>
+<h3 id="153-instancenorm">1.5.3 InstanceNorm</h3>
+<h3 id="154-weightnorm">1.5.4 WeightNorm</h3>
+<h2 id="16">1.6 凸优化</h2>
+<p>根据输入变量<span class="arithmatex">\(X\)</span>的值域是否为实数域，数学优化问题可以分为离散优化问题和连续优化问题。</p>
+<ul>
+<li>离散优化问题主要有两个分支：组合优化（从一个有限集合中找出使得目标函数最优的元素）、整数规划（常见的整数规划问题通常为整数线性规划）</li>
+<li>连续优化问题是目标函数的输入变量为连续变量，即目标函数为实函数</li>
+</ul>
+<p>在连续优化问题中，根据是否有变量的约束条件，可以将优化问题分为无约束优化问题和约束优化问题。</p>
+<ul>
+<li>无约束优化问题的可行域为实数域，则无约束优化问题可写为<span class="arithmatex">\(\min_{\boldsymbol{x}} f(\boldsymbol{x})\)</span>，其中<span class="arithmatex">\(\boldsymbol{x}\in \mathbb{R}^D, \ f:\mathbb{R}^D\to \mathbb{R}\)</span></li>
+<li>约束优化问题中变量需要满足一些等式或不等式的约束。约束优化问题通常使用拉格朗日乘数法来进行求解。</li>
+</ul>
+<p>如果目标函数和所有的约束函数都为线性函数，则为线性规划问题，否则为非线性规划问题。在非线性优化问题中，有一类比较特殊的问题是凸优化问题，其中需要满足：(1)目标函数为凸函数；(2)不等式约束函数为凸函数；（(3)等式约束函数为非线性函数）。</p>
+<h3 id="161">1.6.1 全局最小解与局部最小解</h3>
+<p>求局部最小解一般是比较容易的，但很难保证其为全局最小解。对于线性规划或凸优化问题，局部最小解就是全局最小解。</p>
+<p>要确认一个点<span class="arithmatex">\(\boldsymbol{x}^*\)</span>是否为局部最小解，如果函数<span class="arithmatex">\(f(\boldsymbol{x})\)</span>是二次连续可微的，我们可以通过检查目标函数在点<span class="arithmatex">\(\boldsymbol{x}^*\)</span>的梯度<span class="arithmatex">\(\nabla f(\boldsymbol{x}^*)\)</span>和Hessian矩阵<span class="arithmatex">\(\nabla^2 f(\boldsymbol{x}^*)\)</span>来判断。</p>
+<ul>
+<li>局部最小解的一阶必要条件：<span class="arithmatex">\(\nabla f(\boldsymbol{x}^*)=0\)</span></li>
+<li>局部最小解的二阶必要条件：<span class="arithmatex">\(\nabla f(\boldsymbol{x}^*)=0\)</span>，且<span class="arithmatex">\(\nabla^2 f(\boldsymbol{x}^*)\)</span>为半正定矩阵</li>
+</ul>
+<h3 id="162">1.6.2 梯度下降法</h3>
+<p>梯度下降法也称最速下降法，经常用来求解无约束优化的最小值问题。如果<span class="arithmatex">\(f(\boldsymbol{x})\)</span>在<span class="arithmatex">\(\boldsymbol{x}_t\)</span>附近连续可微，则<span class="arithmatex">\(f(\boldsymbol{x})\)</span>下降最快的方向是<span class="arithmatex">\(\boldsymbol{x}_t\)</span>处梯度的反方向。梯度下降法为一阶收敛算法，如果目标函数为二阶连续可微，则可使用牛顿法（一种二阶收敛算法），收敛速度更快，但是每次迭代需要计算Hessian矩阵，复杂度较高。</p>
+<h3 id="163-kkt">1.6.3 拉格朗日乘数法与KKT条件</h3>
+<p>约束优化问题的形式化表示：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\min_{\boldsymbol{x}} f(\boldsymbol{x})\\
+&amp; \text{s.t.}
+\begin{cases}
+h_m(\boldsymbol{x})=0 &amp;m=1,\cdots,M\\
+g_n(\boldsymbol{x})\leq 0 &amp;n=1,\cdots,N\\
+\end{cases}
+\end{aligned}
+\]</div>
+<p>则<span class="arithmatex">\(\boldsymbol{x}\)</span>的可行域为<span class="arithmatex">\(D=\text{dom}(f)\cap\bigcap_{m=1}^M\text{dom}(h_m)\cap\bigcap_{n=1}^N\text{dom}(g_n)\subseteq \mathbb{R}^D\)</span>。</p>
+<p><strong>等式约束优化问题</strong>：若只有等式约束，则可构造拉格朗日函数<span class="arithmatex">\(\Lambda(\boldsymbol{x},\lambda)=f(\boldsymbol{x})+\sum_{m=1}^M \lambda_m h_m(\boldsymbol{x})\)</span>，其中<span class="arithmatex">\(\lambda\)</span>为拉格朗日乘数（可正可负）。如果<span class="arithmatex">\(f(\boldsymbol{x}^*)\)</span>为原问题的局部最小值，则存在<span class="arithmatex">\(\lambda^*\)</span>使<span class="arithmatex">\((\boldsymbol{x}^*,\lambda^*)\)</span>为<span class="arithmatex">\(\Lambda\)</span>的驻点，因此令<span class="arithmatex">\(\frac{\partial \Lambda}{\partial \boldsymbol{x}}=0\)</span>和<span class="arithmatex">\(\frac{\partial \Lambda}{\partial \lambda}=0\)</span>，则有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\nabla f(\boldsymbol{x})+\sum_{m=1}^M \lambda_m\nabla h_m(\boldsymbol{x})=0\\
+&amp;h_m(\boldsymbol{x})=0, \ \forall m=1,\cdots,M
+\end{aligned}
+\]</div>
+<p>拉格朗日乘数法是将一个有<span class="arithmatex">\(D\)</span>个变量和<span class="arithmatex">\(M\)</span>个等式约束条件的最优化问题转换为一个有<span class="arithmatex">\(D+M\)</span>个变量的函数求驻点的问题。拉格朗日乘数法所得的驻点会包含原问题的所有最小解，但并不保证每个驻点都是原问题的最小解，因此需要进行验证。</p>
+<p><strong>不等式约束优化问题</strong>：对于一般约束优化问题，其拉格朗日函数为<span class="arithmatex">\(\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})=f(\boldsymbol{x})+\sum_{m=1}^M a_m h_m(\boldsymbol{x})+\sum_{n=1}^N b_n g_n(\boldsymbol{x})\)</span>，其中<span class="arithmatex">\(\boldsymbol{a}\)</span>和<span class="arithmatex">\(\boldsymbol{b}\)</span>分别为等式、不等式约束的拉格朗日乘数。</p>
+<p>令<span class="arithmatex">\(\theta_P(\boldsymbol{x})=\max_{\boldsymbol{a},\boldsymbol{b}; \ \boldsymbol{b}\geq 0}\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})\)</span>考虑以下情况：</p>
+<ul>
+<li>当约束条件不满足时，有<span class="arithmatex">\(\max_{\boldsymbol{a},\boldsymbol{b}}\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})=\infty\)</span></li>
+<li>当约束条件满足，且<span class="arithmatex">\(\boldsymbol{b}\geq 0\)</span>时，有<span class="arithmatex">\(\max_{\boldsymbol{a},\boldsymbol{b}}\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})=f(\boldsymbol{x})\)</span></li>
+</ul>
+<p>因此原始约束优化问题等价于以下min-max优化问题（主问题）：</p>
+<div class="arithmatex">\[
+p^*=\min_{\boldsymbol{x}}\theta_P(\boldsymbol{x})=\min_{\boldsymbol{x}}\max_{\boldsymbol{a},\boldsymbol{b}; \ \boldsymbol{b}\geq 0}\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})
+\]</div>
+<p>然而这个min-max问题并不好求解。</p>
+<p>定义<span class="arithmatex">\(\theta_D(\boldsymbol{a},\boldsymbol{b})=\min_{\boldsymbol{x}}\Lambda(\boldsymbol{x}, \boldsymbol{a},\boldsymbol{b})\)</span>，因此可定义原问题的对偶问题：</p>
+<div class="arithmatex">\[
+d^*=\max_{\boldsymbol{a},\boldsymbol{b}; \ \boldsymbol{b}\geq 0}\theta_D(\boldsymbol{a},\boldsymbol{b})=\max_{\boldsymbol{a},\boldsymbol{b}; \ \boldsymbol{b}\geq 0}\min_{\boldsymbol{x}}\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})
+\]</div>
+<p>由于以下关系的存在：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\theta_D(\boldsymbol{a},\boldsymbol{b})=\min_{\boldsymbol{x}}\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})\leq \Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})\leq \max_{\boldsymbol{a},\boldsymbol{b}; \ \boldsymbol{b}\geq 0}\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})=\theta_P(\boldsymbol{x})
+\end{aligned}
+\]</div>
+<p>易得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\theta_D(\boldsymbol{a},\boldsymbol{b})&amp;\leq \theta_P(\boldsymbol{x})\\
+\max_{\boldsymbol{a},\boldsymbol{b}; \ \boldsymbol{b}\geq 0}\theta_D(\boldsymbol{a},\boldsymbol{b})&amp;\leq \min_{\boldsymbol{x}}\theta_P(\boldsymbol{x})\\
+d^*=\max_{\boldsymbol{a},\boldsymbol{b}; \ \boldsymbol{b}\geq 0}\min_{\boldsymbol{x}}\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})&amp;\leq \min_{\boldsymbol{x}}\max_{\boldsymbol{a},\boldsymbol{b}; \ \boldsymbol{b}\geq 0}\Lambda(\boldsymbol{x},\boldsymbol{a},\boldsymbol{b})=p^*\\
+\end{aligned}
+\]</div>
+<p>至此成功将原始问题转化为<strong>对偶问题</strong>，但是二者并不等同。若<span class="arithmatex">\(d^*\leq p^*\)</span>，则称为弱对偶性；若<span class="arithmatex">\(d^*=p^*\)</span>，则称为强对偶性。</p>
+<p>当强对偶性成立时，令<span class="arithmatex">\((\boldsymbol{x}^*,\boldsymbol{a}^*,\boldsymbol{b}^*)\)</span>为原问题和对偶问题的最优解，则满足以下条件：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\nabla f(\boldsymbol{x}^*)+\sum_{m=1}^M \boldsymbol{a}_m^*\nabla h_m(\boldsymbol{x}^*)+\sum_{n=1}^N \boldsymbol{b}_n^*\nabla g_n(\boldsymbol{x}^*)&amp;=0\\
+h_m(\boldsymbol{x}^*)&amp;=0, \ \ m=1,\cdots, M\\
+g_n(\boldsymbol{x}^*)&amp;\leq0, \ \ n=1,\cdots, N\\
+b_n^*\cdot g_n(\boldsymbol{x}^*)&amp;=0, \ \ n=1,\cdots, N\\
+b_n^*&amp;\geq0, \ \ n=1,\cdots, N\\
+\end{aligned}
+\]</div>
+<p>这5个条件称为不等式约束优化问题的<strong>KKT条件</strong>，KKT条件是拉格朗日乘数法在不等式约束优化问题上的泛化。当原问题是凸优化问题时，满足KKT条件的解也是原问题和对偶问题的最优解。</p>
+<p>在KKT条件中，<span class="arithmatex">\(b_n^*\cdot g_n(\boldsymbol{x}^*)=0\)</span>为<strong>互补松弛条件</strong>，互补松弛条件说明当最优解出现在不等式约束的内部，则约束失效。</p>
+<ul>
+<li>若最优解<span class="arithmatex">\(x^*\)</span>出现在不等式约束边界<span class="arithmatex">\(g_n(\boldsymbol{x})=0\)</span>，则<span class="arithmatex">\(b_n^*&gt;0\)</span></li>
+<li>若最优解<span class="arithmatex">\(x^*\)</span>出现在不等式约束内部<span class="arithmatex">\(g_n(\boldsymbol{x})&lt;0\)</span>，则<span class="arithmatex">\(b_n^*=0\)</span></li>
+</ul>
+<h2 id="17">1.7 激活函数</h2>
+<p><strong>Sigmoid函数</strong>：将实数域的输入压缩到<span class="arithmatex">\((0,1)\)</span></p>
+<ul>
+<li>当输入值在0附近时，近似为线性函数</li>
+<li>连续可导，数学性质较好</li>
+<li>输出可看作概率分布，能够与统计学习模型结合</li>
+<li>可以看作软性门，控制其它神经元输出信息的数量</li>
+</ul>
+<div class="arithmatex">\[
+\begin{aligned}
+\sigma(x)&amp;=\frac{1}{1+\exp(-x)}\\
+\sigma'(x)&amp;=\sigma(x)(1-\sigma(x))\\
+\end{aligned}
+\]</div>
+<p><strong>Softmax函数</strong>：argmax的平滑近似</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{softmax}(x_k)&amp;=\frac{\exp(x_k)}{\sum_{i=1}^K \exp(x_i)}\\
+\frac{\partial \text{softmax}(x)}{\partial x}&amp;=\text{diag}(\text{softmax}(x))-\text{softmax}(x)\text{softmax}(x)^\top
+\end{aligned}
+\]</div>
+<p><strong>Tanh函数</strong>：可以看作放大并平移的Sigmoid函数，将实数域的输入压缩到<span class="arithmatex">\((-1,1)\)</span></p>
+<ul>
+<li>当输入值在0附近时，近似为线性函数</li>
+<li>输出是零中心化的，不会产生偏置偏移，避免收敛速度变慢</li>
+</ul>
+<div class="arithmatex">\[\text{tanh}(x)=\frac{\exp(x)-\exp(-x)}{\exp(x)+\exp(-x)}=2\sigma(2x)-1\]</div>
+<p><strong>ReLU函数</strong>：修正线性单元，实际上是一个斜坡函数</p>
+<ul>
+<li>计算高效</li>
+<li>具有生物学合理性（单侧抑制、宽兴奋边界），可以导致良好的稀疏性</li>
+<li>左饱和函数，缓解梯度消失</li>
+<li>非零中心化，可能产生偏置偏移</li>
+<li>存在神经元死亡问题</li>
+</ul>
+<div class="arithmatex">\[
+\text{ReLU}(x)=
+\begin{cases}
+x&amp;x\geq 0\\
+0&amp;x&lt;0
+\end{cases}
+=\max(0,x)
+\]</div>
+<p><strong>Leaky ReLU函数</strong>：</p>
+<div class="arithmatex">\[
+\text{LeakyReLU}(x)=
+\begin{cases}
+x&amp;x\geq 0\\
+\gamma x&amp;x&lt;0
+\end{cases}
+=\max(0,x)+\gamma\min(0,x)
+\]</div>
+<p><strong>ELU函数</strong>：</p>
+<div class="arithmatex">\[
+\text{ELU}(x)=
+\begin{cases}
+x&amp;x\geq 0\\
+\gamma (\exp(x)-1)&amp;x&lt;0
+\end{cases}
+=\max(0,x)+\gamma\min(0,\exp(x)-1)
+\]</div>
+<p><strong>Softplus函数</strong>：ReLU函数的平滑版本，其导数刚好是Sigmoid函数</p>
+<ul>
+<li>虽然也具有单侧抑制、宽兴奋边界的特性，但没有稀疏激活性</li>
+</ul>
+<div class="arithmatex">\[
+\text{Softplus}(x)=\log(1+\exp(x))
+\]</div>
+<p><strong>GELU函数</strong>：</p>
+<p><strong>Maxout函数</strong>：</p>
+<h2 id="18">1.8 损失函数</h2>
+<p><strong>绝对值误差MAE</strong>：误差的绝对值的平均值</p>
+<ul>
+<li>对异常值不敏感</li>
+</ul>
+<div class="arithmatex">\[
+L(\boldsymbol{y},\hat{\boldsymbol{y}})=\frac{1}{N}\sum_{i=1}^N |y_i-\hat{y}_i|
+\]</div>
+<p><strong>均方误差MSE</strong>：一般应用于回归任务，不适用于分类任务</p>
+<ul>
+<li>对异常值敏感</li>
+<li>曲线光滑，收敛速度较快</li>
+<li>MSE+Sigmoid函数可能导致输出层神经元学习缓慢</li>
+</ul>
+<div class="arithmatex">\[
+L(\boldsymbol{y},\hat{\boldsymbol{y}})=\frac{1}{N}\sum_{i=1}^N \frac{1}{2}(y_i-\hat{y}_i)^2
+\]</div>
+<p><strong>交叉熵损失</strong>：也称负对数似然函数，一般用于分类任务。对于两个概率分布，可以使用交叉熵来衡量分布之间的差异。</p>
+<div class="arithmatex">\[
+L(\boldsymbol{y},\hat{\boldsymbol{y}})=\frac{1}{N}\sum_{i=1}^N \left(-\sum_{c=1}^C y_i^c\cdot\log \hat{y}_i^c\right)
+\]</div>
+<p><strong>Hinge损失</strong>：通常用于SVM的分类问题。对于二分类问题，<span class="arithmatex">\(y\)</span>取值为<span class="arithmatex">\(\pm 1\)</span>，<span class="arithmatex">\(\hat{y}\in \mathbb{R}\)</span>。</p>
+<div class="arithmatex">\[
+L(\boldsymbol{y},\hat{\boldsymbol{y}})=\frac{1}{N}\sum_{n=1}^{N} \max(0,1-y_i\cdot \hat{y}_i)
+\]</div>
+<p><strong>Huber损失</strong>：均衡MAE与MSE</p>
+<div class="arithmatex">\[
+L(y_i,\hat{y}_i)=
+\begin{cases}
+\frac{1}{2}(y_i-\hat{y}_i)^2&amp;|y-\hat{y}|\leq
+\delta\\
+\delta |y_i-\hat{y_i}|-\frac{1}{2}\delta^2&amp;|y-\hat{y}|&gt;
+\delta\\
+\end{cases}
+\]</div>
+<h2 id="logisticsoftmax">* Logistic/Softmax回归</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.instant.progress", "toc.follow", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
