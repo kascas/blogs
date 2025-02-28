@@ -64,6 +64,9 @@ Cherry Studio的[官网](https://cherry-ai.com/)或[Github Release](https://gith
 
 本文对API平台的推荐原则：==优先免费，且保证可用性==。对于大模型推理API，我推荐[**魔搭（ModelScope）**](https://www.modelscope.cn)。它提供了免费的API调用。当然，这里的免费其实是有限制的，即每天最多2000请求，且不支持高并发，但是这对于日常对话等非开发用途来说还是绰绰有余的。经过实测，API可用性可以得到保证，推理速度也是正常水平。
 
+!!! note
+    2025-02-28更新：OpenRouter的`deepseek/deepseek-r1:free`目前可用性还不错，token吞吐量比ModelScope大，所以可以优先用OpenRouter的R1，然后ModelScope做备用
+
 同时，如果你有知识库检索需求的话，文本嵌入API（用于RAG的文本向量化）推荐[**硅基流动（Siliconflow）**](https://siliconflow.cn/zh-cn/models)的`BAAI/bge-m3`模型。它同样是免费的，且没有限额。
 
 ### 3.2 获取API Key
